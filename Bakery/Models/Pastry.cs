@@ -1,6 +1,6 @@
 namespace Bakery.Models
 {
-  public class Pastry : Cart
+  public class Pastry : Item
   {
     public Pastry(int count) : base(count)
     {
