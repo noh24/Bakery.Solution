@@ -4,10 +4,11 @@ namespace Bakery.Models
   {
     public Pastry(int count) : base(count)
     {
+      TotalPrice = 2;
     }
     public override int GetTotalPrice()
     {
-      return TotalPrice = Count * 2;
+      return TotalPrice = Count * TotalPrice;
     }
   }
 }
