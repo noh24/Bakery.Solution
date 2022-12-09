@@ -31,5 +31,10 @@ namespace Bakery.Models
       Count += count;
       GetTotalPrice();
     }
+    public void TakeOutOfCount(int count)
+    {
+      Count -= count;
+      GetTotalPrice();
+    }
   }
 }
