@@ -9,6 +9,6 @@ namespace Bakery.Models
       Count = count;
       TotalPrice = 0;
     }
-    public abstract int GetPrice();
+    public abstract int GetTotalPrice();
   }
 }
