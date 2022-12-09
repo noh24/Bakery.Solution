@@ -7,14 +7,6 @@ namespace Bakery.Tests
   public class BreadTest
   {
     [TestMethod]
-    public void BreadConstructor_BreadInheritPropertyFromAbstractClass_PropertyValues()
-    {
-      Bread bread = new Bread(1);
-      Assert.AreEqual(1, bread.Count);
-      Assert.AreEqual(5, bread.TotalPrice);
-      Assert.AreEqual(5, bread.PricePerUnit);
-    }
-    [TestMethod]
     public void GetTotalPrice_PriceForOneBread_Int()
     {
       Bread bread = new Bread(1);
