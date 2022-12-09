@@ -1,3 +1,4 @@
+using System;
 namespace Bakery.Models
 {
   public abstract class Item
@@ -5,12 +6,26 @@ namespace Bakery.Models
     public int Count {get; set;}
     public int PricePerUnit {get; set;}
     public int TotalPrice {get; set;}
+    public int DiscountPrice {get; set;}
     public Item(int count)
     {
       Count = count;
-      PricePerUnit = 0;
       TotalPrice = 0;
     }
-    public abstract int GetTotalPrice();
+    public int GetTotalPrice()
+    {
+      for (int i = 1; i <= Count; i++)
+      {
+        if (i % 3 == 0)
+        {
+          TotalPrice += DiscountPrice;
+        }
+        else
+        {
+          TotalPrice += PricePerUnit;
+        }
+      }
+      return TotalPrice;
+    }
   }
 }
