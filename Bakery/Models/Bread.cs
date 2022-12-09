@@ -5,7 +5,7 @@ namespace Bakery.Models
 {
   public class Bread : Cart
   {
-    public Bread(int count, int totalPrice) : base(count, totalPrice)
+    public Bread(int count) : base(count)
     {
 
     }
