@@ -7,7 +7,10 @@ namespace Bakery.Models
   {
     public Bread(int count) : base(count)
     {
-
+    }
+    public override int GetPrice()
+    {
+      return TotalPrice = Count * 5;
     }
     // public int Price {get; set;}
     // public int Quantity {get; set;}
