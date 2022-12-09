@@ -9,13 +9,11 @@ namespace Bakery.Tests
   public class BreadTest
   {
     [TestMethod]
-    public void BreadConstructor_InstanceOfBreadWithProperties_PropertyValues()
+    public void BreadConstructor_BreadInheritPropertyFromAbstractClass_PropertyValues()
     {
-      int price = 5;
-      int quantity = 1;
-      Bread bread = new Bread(price, quantity);
-      Assert.AreEqual(price, bread.Price);
-      Assert.AreEqual(quantity, bread.Quantity);
+      Bread bread = new Bread(1, 5);
+      Assert.AreEqual(1, bread.Count);
+      Assert.AreEqual(5, bread.TotalPrice);
     }
   }
 }
