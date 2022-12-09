@@ -7,7 +7,7 @@ namespace Bakery.Models
     }
     public override int GetTotalPrice()
     {
-      return TotalPrice = 2;
+      return TotalPrice = Count * 2;
     }
   }
 }
