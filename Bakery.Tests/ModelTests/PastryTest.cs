@@ -10,7 +10,7 @@ namespace Bakery.Tests
     public void GetTotalPrice_PriceForOnePastry_Int()
     {
       Pastry pastry = new Pastry(1);
-      pastry.GetPrice();
+      pastry.GetTotalPrice();
       Assert.AreEqual(2, pastry.TotalPrice);
     }
   }
