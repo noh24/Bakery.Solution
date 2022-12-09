@@ -26,10 +26,10 @@ namespace Bakery.Models
         }
       return TotalPrice;
     }
-    public int AddToCount(int count)
+    public void AddToCount(int count)
     {
       Count += count;
-      return GetTotalPrice();
+      GetTotalPrice();
     }
   }
 }
