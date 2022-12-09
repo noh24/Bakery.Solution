@@ -12,6 +12,7 @@ namespace Bakery.Tests
       Bread bread = new Bread(1);
       Assert.AreEqual(1, bread.Count);
       Assert.AreEqual(0, bread.TotalPrice);
+      Assert.AreEqual(5, bread.PricePerUnit);
     }
     [TestMethod]
     public void GetTotalPrice_PriceForOneBread_Int()
