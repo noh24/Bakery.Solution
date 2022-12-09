@@ -15,13 +15,12 @@ namespace Bakery.Tests
       Assert.AreEqual(1, bread.Count);
       Assert.AreEqual(0, bread.TotalPrice);
     }
-    // [TestMethod]
-    // public void GetTotalPrice_PriceForOneBread_Int()
-    // {
-    //   Bread bread = new Bread(1, 5);
-    //   bread.GetPrice();
-    //   Assert.AreEqual(1, bread.Count);
-    //   Assert.AreEqual(5, bread.TotalPrice);
-    // }
+    [TestMethod]
+    public void GetTotalPrice_PriceForOneBread_Int()
+    {
+      Bread bread = new Bread(1);
+      bread.GetPrice();
+      Assert.AreEqual(5, bread.TotalPrice);
+    }
   }
 }
