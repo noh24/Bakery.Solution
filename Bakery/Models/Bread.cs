@@ -8,9 +8,9 @@ namespace Bakery.Models
     public Bread(int count) : base(count)
     {
     }
-    public override int GetPrice()
+    public override int GetTotalPrice()
     {
-      if (Count == 3)
+      if (Count >= 3)
       {
         return TotalPrice = (Count - 1) * 5;
       }
