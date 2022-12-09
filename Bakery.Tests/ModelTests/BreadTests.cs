@@ -49,6 +49,13 @@ namespace Bakery.Tests
       Assert.AreEqual(0, bread.GetTotalPrice());
       Assert.AreEqual(0, bread.Count);
     }
-
+    [TestMethod]
+    public void AddToCount_IncreaseBreadCountByOne_Int()
+    {
+      Bread bread = new Bread(1);
+      bread.AddToCount(1);
+      Assert.AreEqual(2, bread.Count);
+      Assert.AreEqual(10, bread.TotalPrice);
+    }
   }
 }
