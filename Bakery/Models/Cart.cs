@@ -9,5 +9,9 @@ namespace Bakery.Models
       Count = count;
       TotalPrice = 0;
     }
+    public int GetPrice()
+    {
+      return TotalPrice = Count * 5;
+    }
   }
 }
