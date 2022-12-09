@@ -18,43 +18,37 @@ namespace Bakery.Tests
     public void GetTotalPrice_PriceForOneBread_Int()
     {
       Bread bread = new Bread(1);
-      bread.GetTotalPrice();
-      Assert.AreEqual(5, bread.TotalPrice);
+      Assert.AreEqual(5, bread.GetTotalPrice());
     }
     [TestMethod]
     public void GetTotalPrice_PriceForTwoBread_Int()
     {
       Bread bread = new Bread(2);
-      bread.GetTotalPrice();
-      Assert.AreEqual(10, bread.TotalPrice);
+      Assert.AreEqual(10, bread.GetTotalPrice());
     }
     [TestMethod]
     public void GetTotalPrice_PriceForThreeBread_Int()
     {
       Bread bread = new Bread(3);
-      bread.GetTotalPrice();
-      Assert.AreEqual(10, bread.TotalPrice);
+      Assert.AreEqual(10, bread.GetTotalPrice());
     }
     [TestMethod]
     public void GetTotalPrice_PriceForFourBread_Int()
     {
       Bread bread = new Bread(4);
-      bread.GetTotalPrice();
-      Assert.AreEqual(15, bread.TotalPrice);
+      Assert.AreEqual(15, bread.GetTotalPrice());
     }
     [TestMethod]
     public void GetTotalPrice_PriceForFiveBread_Int()
     {
       Bread bread = new Bread(5);
-      bread.GetTotalPrice();
-      Assert.AreEqual(20, bread.TotalPrice);
+      Assert.AreEqual(20, bread.GetTotalPrice());
     }
     [TestMethod]
     public void GetTotalPrice_PriceForSixBread_Int()
     {
       Bread bread = new Bread(6);
-      bread.GetTotalPrice();
-      Assert.AreEqual(20, bread.TotalPrice);
+      Assert.AreEqual(20, bread.GetTotalPrice());
     }
   }
 }
