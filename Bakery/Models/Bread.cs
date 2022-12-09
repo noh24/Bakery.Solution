@@ -16,7 +16,7 @@ namespace Bakery.Models
         }
         else
         {
-          TotalPrice += 5;
+          TotalPrice += PricePerUnit;
         }
       }
       return TotalPrice;
