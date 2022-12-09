@@ -10,15 +10,19 @@ namespace Bakery.Tests
     public void GetTotalPrice_PriceForOnePastry_Int()
     {
       Pastry pastry = new Pastry(1);
-      pastry.GetTotalPrice();
-      Assert.AreEqual(2, pastry.TotalPrice);
+      Assert.AreEqual(2, pastry.GetTotalPrice());
     }
     [TestMethod]
     public void GetTotalPrice_PriceForTwoPastry_Int()
     {
       Pastry pastry = new Pastry(2);
-      pastry.GetTotalPrice();
-      Assert.AreEqual(4, pastry.TotalPrice);
+      Assert.AreEqual(4, pastry.GetTotalPrice());
+    }
+    [TestMethod]
+    public void GetTotalPrice_PriceForThreePastry_Int()
+    {
+      Pastry pastry = new Pastry(3);
+      Assert.AreEqual(5, pastry.GetTotalPrice());
     }
   }
 }
