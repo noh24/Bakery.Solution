@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using Bakery.Models;
 
 namespace Bakery.Tests
@@ -7,10 +9,13 @@ namespace Bakery.Tests
   public class BreadTest
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedREturnValue()
+    public void BreadConstructor_InstanceOfBreadWithProperties_PropertyValues()
     {
-      // any necessary logic to prep for test. ex. instantiating an object
-      // Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      int price = 5;
+      int quantity = 1;
+      Bread bread = new Bread(price, quantity);
+      Assert.AreEqual(price, bread.Price);
+      Assert.AreEqual(quantity, bread.Quantity);
     }
   }
 }
