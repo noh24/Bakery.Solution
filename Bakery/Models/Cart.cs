@@ -4,10 +4,10 @@ namespace Bakery.Models
   {
     public int Count {get; set;}
     public int TotalPrice {get; set;}
-    public Cart(int count, int totalPrice)
+    public Cart(int count)
     {
       Count = count;
-      TotalPrice = totalPrice;
+      TotalPrice = 0;
     }
   }
 }
