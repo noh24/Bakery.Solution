@@ -3,14 +3,18 @@ using System.Collections.Generic;
 
 namespace Bakery.Models
 {
-  public class Bread
+  public class Bread : Cart
   {
-    public int Price {get; set;}
-    public int Quantity {get; set;}
-    public Bread(int price, int quantity)
+    public Bread(int count, int totalPrice) : base(count, totalPrice)
     {
-      Price = price;
-      Quantity = quantity;
+
     }
+    // public int Price {get; set;}
+    // public int Quantity {get; set;}
+    // public Bread(int price, int quantity)
+    // {
+    //   Price = price;
+    //   Quantity = quantity;
+    // }
   }
 }
