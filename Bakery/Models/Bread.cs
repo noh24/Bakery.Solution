@@ -10,6 +10,10 @@ namespace Bakery.Models
     }
     public override int GetPrice()
     {
+      if (Count == 3)
+      {
+        return TotalPrice = (Count - 1) * 5;
+      }
       return TotalPrice = Count * 5;
     }
     // public int Price {get; set;}
