@@ -57,5 +57,13 @@ namespace Bakery.Tests
       Assert.AreEqual(2, bread.Count);
       Assert.AreEqual(10, bread.TotalPrice);
     }
+    [TestMethod]
+    public void TakeOutOfCount_DecreaseBreadCountByOne_Int()
+    {
+      Bread bread = new Bread(2);
+      bread.TakeOutOfCount(1);
+      Assert.AreEqual(1, bread.Count);
+      Assert.AreEqual(5, bread.TotalPrice);
+    }
   }
 }
