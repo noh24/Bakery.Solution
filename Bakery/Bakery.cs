@@ -10,5 +10,10 @@ public class Program
     // return total price
       // offer deals bread 1 = 5, 2 = 10, 3 = 10
       // pastry : buy 1 = 2,  deal 3 = 5, 4 = 7, 5 = 9, 6 = 10 
+
+    Console.WriteLine("Welcome to Pierre's Bakery");
+    Console.WriteLine("===================");
+    Console.WriteLine("Inventory");
+    Console.WriteLine("===================");
   }
 }
