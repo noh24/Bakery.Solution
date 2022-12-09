@@ -4,6 +4,7 @@ namespace Bakery.Models
   {
     public Bread(int count) : base(count)
     {
+      PricePerUnit = 5;
     }
     public override int GetTotalPrice()
     {
