@@ -26,5 +26,10 @@ namespace Bakery.Models
         }
       return TotalPrice;
     }
+    public int AddToCount(int count)
+    {
+      Count += count;
+      return GetTotalPrice();
+    }
   }
 }
