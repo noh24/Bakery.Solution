@@ -10,18 +10,18 @@ namespace Bakery.Models
     }
     public override int GetTotalPrice()
     {
-      if (Count >= 3)
+      for (int i = 1; i <= Count; i++)
       {
-        return TotalPrice = (Count - 1) * 5;
+        if (i % 3 == 0)
+        {
+          TotalPrice += 0;
+        }
+        else
+        {
+          TotalPrice += 5;
+        }
       }
-      return TotalPrice = Count * 5;
+      return TotalPrice;
     }
-    // public int Price {get; set;}
-    // public int Quantity {get; set;}
-    // public Bread(int price, int quantity)
-    // {
-    //   Price = price;
-    //   Quantity = quantity;
-    // }
   }
 }
