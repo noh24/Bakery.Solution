@@ -1,11 +1,11 @@
 namespace Bakery.Models
 {
-  public abstract class Cart
+  public abstract class Item
   {
     public int Count {get; set;}
     public int PricePerUnit {get; set;}
     public int TotalPrice {get; set;}
-    public Cart(int count)
+    public Item(int count)
     {
       Count = count;
       PricePerUnit = 0;
