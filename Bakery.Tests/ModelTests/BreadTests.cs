@@ -43,5 +43,12 @@ namespace Bakery.Tests
       bread.GetTotalPrice();
       Assert.AreEqual(15, bread.TotalPrice);
     }
+    [TestMethod]
+    public void GetTotalPrice_PriceForFiveBread_Int()
+    {
+      Bread bread = new Bread(5);
+      bread.GetTotalPrice();
+      Assert.AreEqual(20, bread.TotalPrice);
+    }
   }
 }
