@@ -39,9 +39,24 @@ public class Program
           Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
           PromptOrder(userInput, doneWithOrder);
         }
-        doneWithOrder = true;
+      }
+      else if (userInput.Contains("pastry"))
+      {
+        Console.WriteLine("How many pastries would you like to order? [Enter a numerical value]");
+        try
+        {
+          int userPastryQuantity = Convert.ToInt32(Console.ReadLine());
+        }
+        catch (Exception)
+        {
+          Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
+          PromptOrder(userInput, doneWithOrder);
+        }
       }
     }
   }
-  
+  public static void PromptAnotherOrder()
+  {
+    
+  }
 }
