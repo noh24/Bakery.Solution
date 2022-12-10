@@ -1,6 +1,6 @@
 # Pierre's Bakery
 
-#### Bakery Application Powered By C# 
+#### Purchase Loaves of Bread and Pastries
 
 #### Created by [Brian Noh](https://github.com/noh24)
 
