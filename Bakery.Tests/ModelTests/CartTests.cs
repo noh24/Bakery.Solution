@@ -7,11 +7,16 @@ namespace Bakery.Tests
   public class CartTest
   {
     [TestMethod]
-    public void AddItems_AddBreadAndPastryCount_Int()
+    public void AddTotalBread_AddOneCountOfBread_Int()
     {
-      Bread bread = new Bread(1);
-      Pastry pastry = new Pastry(1);
-      Assert.AreEqual(2, Cart.AddItems(bread.Count, pastry.Count));
+      int count = 2;
+      Assert.AreEqual(2, Cart.AddTotalBread(count));
+    }
+    [TestMethod]
+    public void AddTotalPastry_AddOneCountOfPastry_Int()
+    {
+      int count = 2;
+      Assert.AreEqual(2, Cart.AddTotalPastry(count));
     }
     [TestMethod]
     public void GetTotalPrice_AddBreadAndPastryPrice_Int()
