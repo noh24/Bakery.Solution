@@ -12,8 +12,11 @@ public class Program
       // pastry : buy 1 = 2,  deal 3 = 5, 4 = 7, 5 = 9, 6 = 10 
 
     Console.WriteLine("Welcome to Pierre's Bakery");
-    Console.WriteLine("===================");
-    Console.WriteLine("Inventory");
-    Console.WriteLine("===================");
+    Console.WriteLine("==========================");
+    Console.WriteLine("Menu *Holiday Special*");
+    Console.WriteLine("==========================");
+    Console.WriteLine("Bread: $5 \nBuy Two, Get One Free!\n");
+    Console.WriteLine("Pastry: $2 \nBuy Two, Get One 50% Off!");
+    Console.WriteLine("==========================");
   }
 }
