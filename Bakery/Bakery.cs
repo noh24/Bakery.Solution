@@ -18,5 +18,30 @@ public class Program
     Console.WriteLine("Bread: $5 \nBuy Two, Get One Free!\n");
     Console.WriteLine("Pastry: $2 \nBuy Two, Get One 50% Off!");
     Console.WriteLine("==========================");
+    Console.WriteLine("Would you like to order Bread or Pastry? [bread/pastry]");
+    string userInput = Console.ReadLine().ToLower();
+    bool DoneWithOrder = false;
+    PromptOrder(userInput, DoneWithOrder);
   }
+  public static void PromptOrder(string userInput, bool doneWithOrder)
+  {
+    while (!doneWithOrder)
+    {
+      if (userInput.Contains("bread"))
+      {
+        Console.WriteLine("How many loaves of bread would you like to order? [Enter a numerical value]");
+        try
+        {
+          int userBreadQuantity = Convert.ToInt32(Console.ReadLine());
+        }
+        catch (Exception)
+        {
+          Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
+          PromptOrder(userInput, doneWithOrder);
+        }
+        doneWithOrder = true;
+      }
+    }
+  }
+  
 }
