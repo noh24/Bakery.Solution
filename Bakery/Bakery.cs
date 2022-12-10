@@ -38,22 +38,26 @@ public class Program
         catch (Exception)
         {
           Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
-          PromptOrder();
         }
-        Console.WriteLine("Is there anything else? [Y/N]");
-        string anythingElse = Console.ReadLine().ToLower();
-        if (anythingElse == "y")
+        bool areYouDone = false;
+        while (!areYouDone)
         {
-          PromptOrder();
-        }
-        else if (anythingElse == "n")
-        { 
-          Bread bread = new Bread(Cart.TotalBread);
-          bread.GetTotalPrice();
-          Pastry pastry = new Pastry(Cart.TotalPastry);
-          pastry.GetTotalPrice();
-          Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
-          doneWithOrder = true;
+          Console.WriteLine("Is there anything else? [Y/N]");
+          string anythingElse = Console.ReadLine().ToLower();
+          if (anythingElse == "n")
+          { 
+            Bread bread = new Bread(Cart.TotalBread);
+            bread.GetTotalPrice();
+            Pastry pastry = new Pastry(Cart.TotalPastry);
+            pastry.GetTotalPrice();
+            Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
+            doneWithOrder = true;
+            areYouDone = true;
+          }
+          else if (anythingElse != "n" || anythingElse != "y")
+          {
+            Console.WriteLine("Invalid entry.");
+          }
         }
       }
       else if (userInput.Contains("pastry"))
