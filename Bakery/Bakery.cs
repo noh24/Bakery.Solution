@@ -1,5 +1,5 @@
 using System;
-
+using Bakery.Models;
 public class Program
 {
   public static void Main()
@@ -21,11 +21,14 @@ public class Program
     Console.WriteLine("Would you like to order Bread or Pastry? [bread/pastry]");
     string userInput = Console.ReadLine().ToLower();
     bool DoneWithOrder = false;
-    PromptOrder(userInput, DoneWithOrder);
+    if (userInput.Contains("bread"))
+    {
+      PromptOrder();
+    }
   }
-  public static void PromptOrder(string userInput, bool doneWithOrder)
+  public static void PromptOrder()
   {
-    while (!doneWithOrder)
+    while (!DoneWithOrder)
     {
       if (userInput.Contains("bread"))
       {
@@ -33,11 +36,27 @@ public class Program
         try
         {
           int userBreadQuantity = Convert.ToInt32(Console.ReadLine());
+          Cart.AddTotalBread(userBreadQuantity);
         }
         catch (Exception)
         {
           Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
-          PromptOrder(userInput, doneWithOrder);
+          PromptOrder();
+        }
+        Console.WriteLine("Is there anything else? [Y/N]");
+        string anythingElse = Console.ReadLine().ToLower();
+        if (anythingElse == "y")
+        {
+          PromptOrder();
+        }
+        else if (anythingElse == "n")
+        { 
+          Bread bread = new Bread(Cart.TotalBread);
+          bread.GetTotalPrice();
+          Pastry pastry = new Pastry(Cart.TotalPastry);
+          pastry.GetTotalPrice();
+          Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
+          DoneWithOrder = true;
         }
       }
       else if (userInput.Contains("pastry"))
@@ -46,17 +65,33 @@ public class Program
         try
         {
           int userPastryQuantity = Convert.ToInt32(Console.ReadLine());
+          Cart.AddTotalPastry(userPastryQuantity);
         }
         catch (Exception)
         {
           Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
-          PromptOrder(userInput, doneWithOrder);
+          PromptOrder();
+        }
+        Console.WriteLine("Is there anything else? [Y/N]");
+        string anythingElse = Console.ReadLine().ToLower();
+        if (anythingElse == "y")
+        {
+          PromptOrder();
+        }
+        else if (anythingElse == "n")
+        {
+          Bread bread = new Bread(Cart.TotalBread);
+          bread.GetTotalPrice();
+          Pastry pastry = new Pastry(Cart.TotalPastry);
+          pastry.GetTotalPrice();
+          Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
+          DoneWithOrder = true;
         }
       }
     }
   }
   public static void PromptAnotherOrder()
   {
-    
+
   }
 }
