@@ -18,17 +18,14 @@ public class Program
     Console.WriteLine("Bread: $5 \nBuy Two, Get One Free!\n");
     Console.WriteLine("Pastry: $2 \nBuy Two, Get One 50% Off!");
     Console.WriteLine("==========================");
-    Console.WriteLine("Would you like to order Bread or Pastry? [bread/pastry]");
-    string userInput = Console.ReadLine().ToLower();
-    bool DoneWithOrder = false;
-    if (userInput.Contains("bread"))
-    {
-      PromptOrder();
-    }
+    PromptOrder();
   }
   public static void PromptOrder()
   {
-    while (!DoneWithOrder)
+    Console.WriteLine("Would you like to order Bread or Pastry? [bread/pastry]");
+    string userInput = Console.ReadLine().ToLower();
+    bool doneWithOrder = false;
+    while (!doneWithOrder)
     {
       if (userInput.Contains("bread"))
       {
@@ -56,7 +53,7 @@ public class Program
           Pastry pastry = new Pastry(Cart.TotalPastry);
           pastry.GetTotalPrice();
           Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
-          DoneWithOrder = true;
+          doneWithOrder = true;
         }
       }
       else if (userInput.Contains("pastry"))
@@ -85,13 +82,9 @@ public class Program
           Pastry pastry = new Pastry(Cart.TotalPastry);
           pastry.GetTotalPrice();
           Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
-          DoneWithOrder = true;
+          doneWithOrder = true;
         }
       }
     }
-  }
-  public static void PromptAnotherOrder()
-  {
-
   }
 }
