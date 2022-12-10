@@ -35,7 +35,7 @@ public class Program
           }
           catch (Exception)
           {
-            Console.WriteLine("Invalid Entry. Try again.");
+            Console.WriteLine("Invalid Entry. Please enter a valid number.");
           }
         }
         bool isThereMore = false;
@@ -61,85 +61,47 @@ public class Program
       }
       else if (userInput.Contains("pastry"))
       {
-
+        bool validNumber = false;
+        while (!validNumber)
+        {
+          try 
+          {
+            int pastryQuantity = PromptPastryOrder();
+            Cart.AddTotalPastry(pastryQuantity);
+            validNumber = true;
+          }
+          catch (Exception)
+          {
+            Console.WriteLine("Invalid Entry. Please enter a valid number.");
+          }
+        }
+        bool isThereMore = false;
+        while (!isThereMore)
+        {
+          string anythingElse = AnythingElse();
+          if (anythingElse == "y")
+          {
+            isThereMore = true;
+            continue;
+          }
+          else if (anythingElse == "n")
+          {
+            Checkout();
+            isThereMore = true;
+            doneWithOrder = true;
+          }
+          else
+          {
+            Console.WriteLine("Invalid Entry. Enter 'y' for yes or 'n' for no.");
+          }
+        }
       }
       else
       {
         Console.WriteLine("Invalid Entry. Please enter 'bread' for bread or 'pastry' for pastry.");
       }
-      // else if (userInput.Contains("pastry"))
-      // {
-      //   promptPastryOrder();
-      // }
     }
   }
-  // public static void Prompt()
-  // {
-  //   string userInput = PromptOrder();
-  //   bool doneWithOrder = false;
-  //   while (!doneWithOrder)
-  //   {
-  //     if (userInput.Contains("bread"))
-  //     { 
-  //       {
-  //         promptBreadOrder();
-  //       }
-  //       bool areYouDone = false;
-  //       while (!areYouDone)
-  //       {
-  //         Console.WriteLine("Is there anything else? [Y/N]");
-  //         string anythingElse = Console.ReadLine().ToLower();
-  //         if (anythingElse == "y")
-  //         {
-  //           promptBreadOrder();
-  //         }
-  //         else if (anythingElse == "n")
-  //         { 
-  //           Bread bread = new Bread(Cart.TotalBread);
-  //           bread.GetTotalPrice();
-  //           Pastry pastry = new Pastry(Cart.TotalPastry);
-  //           pastry.GetTotalPrice();
-  //           Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
-  //           doneWithOrder = true;
-  //           areYouDone = true;
-  //         }
-  //         else
-  //         {
-  //           Console.WriteLine("Invalid Entry");
-  //         }
-  //       }
-  //     }
-  //     else if (userInput.Contains("pastry"))
-  //     {
-  //       Console.WriteLine("How many pastries would you like to order? [Enter a numerical value]");
-  //       try
-  //       {
-  //         int userPastryQuantity = Convert.ToInt32(Console.ReadLine());
-  //         Cart.AddTotalPastry(userPastryQuantity);
-  //       }
-  //       catch (Exception)
-  //       {
-  //         Console.WriteLine("Invalid entry. Please enter a numerical value. \n");
-  //         PromptOrder();
-  //       }
-  //       Console.WriteLine("Is there anything else? [Y/N]");
-  //       string anythingElse = Console.ReadLine().ToLower();
-  //       if (anythingElse == "y")
-  //       {
-  //         PromptOrder();
-  //       }
-  //       else if (anythingElse == "n")
-  //       {
-  //         Bread bread = new Bread(Cart.TotalBread);
-  //         bread.GetTotalPrice();
-  //         Pastry pastry = new Pastry(Cart.TotalPastry);
-  //         pastry.GetTotalPrice();
-  //         Console.WriteLine("This is your order: \n{0} Bread. \n{1} Pastry. \nTotal is ${2}.", Cart.TotalBread, Cart.TotalPastry, Cart.GetTotalPrice(bread.TotalPrice, pastry.TotalPrice));
-  //         doneWithOrder = true;
-  //       }
-  //     }
-  //   }
-  // }
   public static string PromptOrder()
   {
     Console.WriteLine("Would you like to order bread or pastry? [bread/pastry]");
@@ -152,11 +114,11 @@ public class Program
     int userBreadQuantity = Convert.ToInt32(Console.ReadLine());
     return userBreadQuantity;
   }
-  public static void PromptPastryOrder()
+  public static int PromptPastryOrder()
   {
     Console.WriteLine("How many pastries would you like to order? [Enter a numerical value]");
     int userPastryQuantity = Convert.ToInt32(Console.ReadLine());
-    Cart.AddTotalBread(userPastryQuantity);
+    return userPastryQuantity;
   }
   public static string AnythingElse()
   {
