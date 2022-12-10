@@ -2,20 +2,20 @@ namespace Bakery.Models
 {
   public class Cart
   {
-    private static int _totalBread {get; set;}
-    private static int _totalPastry {get; set;}
-    private static int _totalPrice {get; set;}
+    public static int TotalBread {get; set;}
+    public static int TotalPastry {get; set;}
+    public static int TotalPrice {get; set;}
     public static int AddTotalBread(int bread)
     {
-      return _totalBread += bread;
+      return TotalBread += bread;
     }
     public static int AddTotalPastry(int pastry)
     {
-      return _totalPastry += pastry;
+      return TotalPastry += pastry;
     }
     public static int GetTotalPrice(int bread, int pastry)
     {
-      return _totalPrice = bread + pastry;
+      return TotalPrice = bread + pastry;
     }
   }
 }
