@@ -41,6 +41,10 @@ Customers are advised to take advantage of our __holiday sales__!
   ```
    ~/Desktop/Bakery.Solution/ $ dotnet run --project Bakery
   ```
+- Optional: Run tests
+  ```
+   ~/Desktop/Bakery.Solution/ $ dotnet test Bakery.Tests/
+  ```
 
 ## Known Bugs
 
